@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: backend-tests-go-jqgunqwr-gitops
+  description: This is GitOps manifest for backend-tests-go-jqgunqwr   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=backend-tests-go-jqgunqwr
+    backstage.io/kubernetes-id: backend-tests-go-jqgunqwr 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: backend-tests-go-jqgunqwr
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:backend-tests-go-jqgunqwr
